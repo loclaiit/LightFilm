@@ -1,0 +1,12 @@
+<div class="main-container">
+  <div class="header">
+    <app-page-header></app-page-header>
+  </div>
+  <div class="content-container">
+    <app-movie class="app-movie item" [class.shrink]="this.session.menuFlag"></app-movie>
+    <app-menu class="app-menu item" id="app-menu" [class.hide]="!this.session.menuFlag"></app-menu>
+  </div>
+  <div class="footer">
+    <app-footer id="app-footer"></app-footer>
+  </div>
+</div>

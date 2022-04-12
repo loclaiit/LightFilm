@@ -1,0 +1,30 @@
+.menu-container{
+  padding-top: 50px;
+  text-align: center;
+}
+.search-container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+mat-form-field{
+  width: 15rem;
+}
+.search-button{
+  width: 15rem;
+  height: 30px;
+  background-color: #DDD;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  cursor: pointer;
+  opacity: 0.8;
+    &:hover{
+      opacity: 1;
+    }
+  img{
+    width: 30px;
+
+  }
+}
+

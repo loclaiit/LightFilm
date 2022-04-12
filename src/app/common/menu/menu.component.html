@@ -1,0 +1,21 @@
+<div class="menu-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Genres</mat-label>
+    <mat-select [(ngModel)]="criteria.genre" name="genres">
+      <mat-option *ngFor="let g of listGenres" [value]="g">
+        {{g}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput #title maxlength="30" placeholder="Ex. titanic" [(ngModel)]="criteria.title">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Year</mat-label>
+    <input matInput #year maxlength="4" placeholder="Ex. 2019" [(ngModel)]="criteria.year">
+  </mat-form-field>
+  <div class="search-container" (click)="searchMovie()">
+    <div class="search-button"><img src="../../../assets/image/search.svg"></div>
+  </div>
+</div>

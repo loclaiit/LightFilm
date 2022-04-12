@@ -1,0 +1,36 @@
+<div class="movie-container">
+  <div class="noRecord" *ngIf="!this.films">
+    <h1>No Record Found (0)</h1>
+  </div>
+  <div *ngFor="let film of films" class="cards">
+    <app-skeleten-loader [hidden]="film.loaded==true"></app-skeleten-loader>
+    <div [hidden]="film.loaded==false">
+      <div class="card">
+        <div class="imgBx">
+          <img class="poster" src={{film.primaryImage.url}} (load)="loaded(film)">
+          <svg xmlns="http://www.w3.org/2000/svg" class="toggle-plot" viewBox="0 0 512 512" [class.showPlot]="film.togglePlot" (click)="film.togglePlot=!film.togglePlot"><path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48 48 141.13 48 256zm257.37 0l-84.68-84.69a16 16 0 0122.62-22.62l96 96a16 16 0 010 22.62l-96 96a16 16 0 01-22.62-22.62z"/></svg>
+          <!-- <img class="toggle-plot" src="../../../assets/image/chevron-forward-circle.svg" [class.showPlot]="film.togglePlot" (click)="film.togglePlot=!film.togglePlot"> -->
+        </div>
+        <div class="details">
+          <h4>{{film.titleText.text}}</h4>
+          <p>Released: {{film.releaseDateStr==''? 'Unknown':film.releaseDateStr}}</p>
+          <span class="rating"><svg
+              xmlns="http://www.w3.org/2000/svg" class="rating-icon"
+              viewBox="0 0 24 24" fill="currentColor" role="presentation">
+              <path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z">
+              </path>
+            </svg>
+            <h4>{{film.ratingsSummary?.aggregateRating | number}}</h4>
+            <h5 *ngIf="film.ratingsSummary">({{film.ratingsSummary?.voteCount}} votes)</h5>
+          </span>
+          <div class="group">
+            <a href="#">Watch</a>
+          </div>
+        </div>
+        <div class="description" [class.showPlot]="film.togglePlot">
+          {{film.plot?.plotText?.plainText}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

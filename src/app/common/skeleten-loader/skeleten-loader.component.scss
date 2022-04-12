@@ -1,0 +1,100 @@
+@import '../../../assets/style//variables';
+
+.fpo {
+    position: relative;
+    margin: 25% auto;
+    display: block;
+}
+.pulsate{
+  background: linear-gradient(-45deg, #393636, #373535, #DDDDDD, #F0F0F0);
+	background-size: 400% 400% !important;
+	-webkit-animation: Gradient 2.25s ease infinite;
+	-moz-animation: Gradient 2.25s ease infinite;
+	animation: Gradient 2.25s ease infinite;
+  animation-direction: normal;
+}
+img{
+  width:$item-w;
+}
+.block {
+  display:block;
+  width:$item-w;
+  height:16px;
+  color: #000;
+}
+.block2 {
+  width:78px;
+  height:8px;
+  margin-bottom:8px;
+}
+.block3 {
+  width:131px;
+  height:8px;
+  margin-bottom:16px;
+}
+#card {
+  box-sizing: border-box;
+	width: $item-w * 2;
+  // background: #fff;
+	position: relative;
+	margin:auto;
+  height: 100%;
+	top:25%;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+}
+.icon{
+  filter: invert(100%);
+}
+.card-image {
+  box-sizing: border-box;
+  display:block;
+  width:$item-w;
+  // background:#FAFAFA;
+  // padding:16px;
+}
+.card-content {
+  clear:both;
+  box-sizing: border-box;
+  padding:16px;
+  background:#fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
