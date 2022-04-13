@@ -11,9 +11,10 @@ mat-form-field{
   width: 15rem;
 }
 .search-button{
-  width: 15rem;
+  width: 10rem;
   height: 30px;
-  background-color: #DDD;
+  background-color: var(--header-bg-color);
+  border: 2px solid var(--text-color);
   display: flex;
   justify-content: center;
   border-radius: 20px;
@@ -22,9 +23,9 @@ mat-form-field{
     &:hover{
       opacity: 1;
     }
-  img{
+  .icon{
     width: 30px;
-
+    fill: var(--text-color);
   }
 }
 

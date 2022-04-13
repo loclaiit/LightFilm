@@ -73,4 +73,14 @@ export class MovieComponent implements OnInit, OnDestroy {
     setTimeout(() => {film.loaded = true}, 1000);
   }
 
+  togglePlot(index: number){
+    this.films.forEach(function(f, i) {
+      if(i == index)
+        f.togglePlot=!f.togglePlot
+      else
+        f.togglePlot = false;
+    });
+
+  }
+
 }

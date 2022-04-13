@@ -17,5 +17,7 @@ export class PageHeaderComponent implements OnInit {
     this.session.menuFlag = !this.session.menuFlag;
     this.session.refresh.next(1);
   }
-
+  change(){
+    document.body.classList.toggle('light');
+  }
 }

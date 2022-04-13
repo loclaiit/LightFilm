@@ -37,8 +37,8 @@ $LightFilm-theme: mat.define-light-theme((
 @include mat.all-component-themes($LightFilm-theme);
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: $background-color;
-  background-image: $background-image ;
+  background-color: var(--background-color);
+  background-image: var(--background-image) ;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -48,15 +48,37 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
   padding-right:0 !important;
 }
 mat-label{
-  color: #FFF;
+  color: var(--text-color);
 }
 .mat-form-field-appearance-fill .mat-form-field-underline::before{
-  background-color: #FFF !important;
+  background-color: var(--text-color) !important;
 }
-.mat-select-value-text{color: #FFF;}
+.mat-select-value-text{color: var(--text-color);}
 .mat-select-arrow{
-  color: #FFF !important;
+  color: var(--text-color) !important;
 }
 .mat-input-element{
-  color: #FFF !important;
+  color: var(--text-color) !important;
+}
+:root {
+  --background-color: #{$background-color};
+  --background-image: #{$background-image};
+  --sub-color: #{$sub-color};
+  --sub-desc-color: #{$sub-desc-color};
+  --page-title:#{$page-title};
+  --header-bg-color: #{$header-bg-color};
+  --header-color: #{$header-color};
+  --text-color: #{$text-color};
+  --menu-background: #{$menu-background};
+}
+.light{
+  --background-color: #{$light--background-color};
+  --background-image: #{$light--background-image};
+  --sub-color: #{$light--sub-color};
+  --sub-desc-color: #{$light--sub-desc-color};
+  --page-title:#{$light--page-title};
+  --header-bg-color: #{$light--header-bg-color};
+  --header-color: #{$light--header-color};
+  --text-color: #{$light--text-color};
+  --menu-background: #{$light--menu-background};
 }
